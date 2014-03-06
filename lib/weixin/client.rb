@@ -17,6 +17,13 @@ module Weixin
       @endpoint     = 'https://api.weixin.qq.com/cgi-bin'
     end  	
 
+    def access_token
+      if Time.now >= @expired_at
+        authenticate
+      end
+      @access_token
+    end    
+
     def get_access_token
       if expired?
         authenticate
