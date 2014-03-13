@@ -289,7 +289,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -312,7 +312,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -337,7 +337,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -364,7 +364,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -392,7 +392,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -428,7 +428,7 @@ message = <<STRING
 }
 STRING
 
-message = JSON.parse(message)
+message = MultiJson.load(message)
 
 client.message_custom.send(message)
 
@@ -449,7 +449,7 @@ client.message_custom.send(message)
 menu = Weixin::Menu.new('your_weixin_app_key', 'your_weixin_app_secret')
 
 menu_string = <<STRING
- {
+{
      "button":[
      {  
           "type":"click",
@@ -480,10 +480,10 @@ menu_string = <<STRING
                "key":"V1001_GOOD"
             }]
        }]
- }
+}
 STRING
 
-menu_hash = JSON.parse(menu_string)
+menu_hash = MultiJson.load(menu_string)
 
 menu.add(menu_hash)
 
